@@ -1,8 +1,10 @@
 import { assertEquals } from "@std/assert";
 import { add, multiple } from "./main.ts";
 
-Deno.test(function addTest() {
-  assertEquals(add(2, 3), 5);
+Deno.test("should add a to b", () => {
+  const got = add(2, 3);
+  const expected = 5;
+  assertEquals(got, expected);
 });
 
 Deno.test("Should multiple a by b", () => {
