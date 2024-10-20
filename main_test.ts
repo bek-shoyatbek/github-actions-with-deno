@@ -5,7 +5,7 @@ Deno.test(function addTest() {
   assertEquals(add(2, 3), 5);
 });
 
-Deno.test(() => {
+Deno.test("Should multiple a by b", () => {
   const got = multiple(2, 3);
   const expected = 6;
 
