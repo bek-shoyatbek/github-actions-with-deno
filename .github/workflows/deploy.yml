@@ -7,14 +7,18 @@ on:
     branches: [main]
 
 jobs:
-  steps:
-    - name: Clone repository
-      uses: actions/checkout@v3
+  build:
+    name: Build
+    runs-on: ubuntu-latest
 
-    - name: Install Deno
-      uses: denoland/setup-deno@v2
-      with:
-        deno-version: v2.x
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
 
-    - name: Test
-      run: "deno task test"
+      - name: Install Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Test
+        run: "deno task test"
